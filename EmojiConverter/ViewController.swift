@@ -24,23 +24,33 @@ class ViewController: UIViewController {
     }
 
     @IBAction func translateToEmoji(_ sender: UIButton) {
-        if let inputText = descriptionInputField.text {
-            switch inputText {
-            case "happy":
-                emojiLabel.text = "😃"
-            default:
-                emojiLabel.text = "else"
-            }
-        } else {
-            emojiLabel.text = "invalid entry"
+        guard let inputText = descriptionInputField.text else {
+            return
         }
-
-
-//        if descriptionInputField.text == "happy" {
-//            emojiLabel.text = "😃"
-//        } else {
-//            emojiLabel.text = "else"
-//        }
+        switch inputText {
+        case "happy":
+            emojiLabel.text = "😃"
+        case "sad":
+            emojiLabel.text = "😢"
+        case "angry":
+            emojiLabel.text = "😡"
+        case "angel":
+            emojiLabel.text = "😇"
+        case "cry":
+            emojiLabel.text = "😭"
+        case "frown":
+            emojiLabel.text = "☹️"
+        case "derp":
+            emojiLabel.text = "😑"
+        case "surprise":
+            emojiLabel.text = "😱"
+        case "eye roll":
+            emojiLabel.text = "🙄"
+        case "vomit":
+            emojiLabel.text = "🤢"
+        default:
+            emojiLabel.text = "emoji not found"
+        }
     }
 
 }
